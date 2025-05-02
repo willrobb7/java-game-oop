@@ -7,6 +7,7 @@ public class RockPaperScissorsGame implements Game{
         user.setName();
         System.out.println("Hello, " + user.getName());
         System.out.println("Rock Paper Scissors Game started! You have 3 tries to beat the computer");
+        System.out.println("----------------");
 
         for (int i = 0; i < 3; i++) {
             computerUser.setChoice();
