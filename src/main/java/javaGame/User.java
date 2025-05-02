@@ -5,7 +5,7 @@ package javaGame;
 public abstract class User {
 
     protected String name;
-    protected int choice;
+    protected RockPaperScissorsChoices choice;
 
     // Everything that inherits from User gets this method for free
     // The implementation is the same for all sub classes (unless you override the method)
@@ -22,7 +22,7 @@ public abstract class User {
         return name;
     }
 
-    protected int getChoice (){
+    protected RockPaperScissorsChoices getChoice (){
         return choice;
     }
 
