@@ -7,10 +7,13 @@ public class Main {
     public static void main(String[] args) {
 
         HumanUser user = new HumanUser();
-        ComputerUser computerUser = new ComputerUser();
+        HumanUser user1 = new HumanUser();
+//        ComputerUser user = new ComputerUser();
+//        ComputerUser user1 = new ComputerUser();
+
         RockPaperScissorsGame game = new RockPaperScissorsGame();
 
-        game.playGame(user,computerUser);
+        game.playGame(user,user1);
 
     }
 }

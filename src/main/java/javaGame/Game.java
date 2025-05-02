@@ -3,6 +3,6 @@ package javaGame;
 
 public interface Game {
 
-    void playGame(User user, ComputerUser computerUser);
+    void playGame(User user, User user1);
 
 }

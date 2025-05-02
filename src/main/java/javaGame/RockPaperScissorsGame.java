@@ -1,45 +1,46 @@
 package javaGame;
 
+public class RockPaperScissorsGame implements Game {
 
-public class RockPaperScissorsGame implements Game{
+    public void playGame(User user1, User user2) {
+        user1.setName();
+        user2.setName();
 
-    public void playGame(User user, ComputerUser computerUser) {
-        user.setName();
-        System.out.println("Hello, " + user.getName());
-        System.out.println("Rock Paper Scissors Game started! You have 3 tries to beat the computer");
+        System.out.println("Hello " + user1.getName() + " and " + user2.getName());
+        System.out.println("Rock Paper Scissors Game started! You have 3 tries to beat each other");
         System.out.println("----------------");
 
         for (int i = 0; i < 3; i++) {
-            computerUser.setChoice();
-            user.setChoice();
+            if (user1 instanceof HumanUser) {
+                System.out.println(user1.getName() + ", it's your turn.");
+            }
+            user1.setChoice();
 
-            RockPaperScissorsChoices playerChoice = user.getChoice();
-            RockPaperScissorsChoices computersChoice = computerUser.getChoice();
+            if (user2 instanceof HumanUser) {
+                System.out.println(user2.getName() + ", it's your turn.");
+            }
+            user2.setChoice();
 
-            System.out.println("You chose: " + playerChoice);
-            System.out.println("Computer chose: " + computersChoice);
+            RockPaperScissorsChoices choice1 = user1.getChoice();
+            RockPaperScissorsChoices choice2 = user2.getChoice();
 
-            if (playerChoice.equals(computersChoice) && i == 2) {
+            System.out.println(user1.getName() + " chose: " + choice1);
+            System.out.println(user2.getName() + " chose: " + choice2);
+
+            if (choice1.equals(choice2) && i == 2) {
                 System.out.println("It's a draw, and you're out of attempts! Better luck next time");
                 System.out.println("----------------");
                 break;
-            } else if (playerChoice.equals(computersChoice)) {
+            } else if (choice1.equals(choice2)) {
                 System.out.println("It's a draw");
                 System.out.println("----------------");
-            } else if (playerChoice.beats(computersChoice)) {
-                System.out.println("You Win!");
+            } else if (choice1.beats(choice2)) {
+                System.out.println(user1.getName() + " wins!");
                 break;
             } else {
-                if (i != 2) {
-                    System.out.println("You Lose this round, try again");
-                    System.out.println("----------------");
-                } else {
-                    System.out.println("----------------");
-                    System.out.println("You Lose! Better luck next time");
-                    System.out.println("----------------");
-                }
+                System.out.println(user2.getName() + " wins!");
+                break;
             }
         }
     }
-
 }

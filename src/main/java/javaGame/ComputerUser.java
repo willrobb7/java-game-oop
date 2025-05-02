@@ -7,7 +7,7 @@ public class ComputerUser extends User{
 
     @Override
     protected void setName(){
-        this.name = "Puter";
+        this.name = "Computer";
     }
 
     @Override
